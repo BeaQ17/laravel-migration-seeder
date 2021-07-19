@@ -11,9 +11,19 @@
 
         <!-- Styles -->
         <style>
+
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url(https://www.viaggiaconalice.it/images/blog/2018/curiosita/sotto-categorie-blog-viaggia-con-alice8.jpg);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center center;
+                background-size: cover; 
+                color: #172329;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -24,46 +34,39 @@
                 height: 100vh;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
+            #bigtitle{
                 text-align: center;
+                margin: 20px 0px;
             }
 
-            .title {
-                font-size: 84px;
+            .container{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 80%;
+                margin: auto;
+                background-color: #a9b1b69a
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            .card{
+                width: 40%;
+                margin: 20px 5px;
+                padding: 10px 0px 10px 15px;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            img{
+                width: 100%;
             }
+
+
         </style>
     </head>
     <body>
+
+        <h1 id="bigtitle">Travel options</h1>
+        <div class="container">
+            @foreach ($travels as $travel)
             <div class="card">
                 <img src="{{$travel->cover_url}}" alt="cover img">
                 <h2>{{$travel->title}}</h2>
@@ -75,6 +78,9 @@
                 <p>{{$travel->agency_phone}} - {{$travel->agency_email}}</p>
                 <p>{{$travel->agency_website}}</p>
             </div>
+            @endforeach
         </div>
+
+
     </body>
 </html>
