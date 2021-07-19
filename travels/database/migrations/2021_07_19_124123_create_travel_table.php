@@ -15,6 +15,14 @@ class CreateTravelTable extends Migration
     {
         Schema::create('travel', function (Blueprint $table) {
             $table->id();
+            $table->string("location");
+            $table->string("agency");
+            $table->string("agency_email");
+            $table->string("agency_website");
+            $table->string("agency_phone");
+            $table->boolean("insurance");
+            $table->decimal("price");
+            $table->string("cover_url");
             $table->timestamps();
         });
     }
