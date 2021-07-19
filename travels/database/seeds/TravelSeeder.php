@@ -15,6 +15,7 @@ class TravelSeeder extends Seeder
         for ($i = 0; $i < 15; $i++) {
             $travel = new Travel();
             $travel->location = $faker->countryCode();
+            $travel->title = $faker->sentence(3);
             $travel->agency = $faker->company();
             $travel->agency_email = $faker->companyEmail();
             $travel->agency_website = $faker->domainName();
